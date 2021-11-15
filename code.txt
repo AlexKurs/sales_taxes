@@ -1,0 +1,16 @@
+# Input 1
+
+a = input('Please add the first product to cart: ')
+b = input('Please add the second product to cart: ')
+c = input('Please add the third  product to cart: ')
+
+n = int(a[0]) * 2
+
+print(a)
+print(b)
+print(c)
+print('---------')
+print(n)
+# print('Sales Taxes: ', tax)
+print('---------')
+# print('Total: ', total)

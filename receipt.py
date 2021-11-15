@@ -97,3 +97,85 @@ print(n5, product5 + ':', price5)
 print('---------')
 print("Sales Taxes: ", round(round_to_5_cents(taxes2), 2))
 print("Total: ", round(total2, 2))
+
+# Input 3
+
+e = input('Please add the first product to cart: ')
+f = input('Please add the second product to cart: ')
+g = input('Please add the third product to cart: ')
+h = input('Please add the fourth product to cart: ')
+
+
+n6 = int(e[0])
+price6 = float(e[-5:])
+product6 = e[2:-9]
+
+if product6 == 'imported bottle of perfume' or 'bottle of perfume':
+    tax6 = D(price6 * 0.1)
+    if re.search(r'\bimported\b', product6):
+        itax3 = D(price6 * 0.05)
+        price6 = round(price6 + float(itax3), 2)
+    else:
+        itax3 = 0
+    price6 = round(price6 + float(tax6), 2)
+else:
+    tax6 = 0
+
+n7 = int(f[0])
+price7 = float(f[-5:])
+product7 = f[2:-9]
+
+if product7 == 'imported bottle of perfume' or 'bottle of perfume':
+    tax7 = D(price7 * 0.1)
+    if re.search(r'\bimported\b', product7):
+        itax4 = D(price7 * 0.05)
+        price7 = price7 + float(round_to_5_cents(itax4))
+    else:
+        itax4 = 0
+    price7 = round(price7 + float(round_to_5_cents(tax7)), 2)
+else:
+    tax7 = 0
+
+n8 = int(g[0])
+price8 = float(g[-5:])
+product8 = g[2:-9]
+
+
+if product8 == 'imported bottle of perfume' or 'bottle of perfume':
+    tax8 = D(price8 * 0.1)
+    if re.search(r'\bimported\b', product8):
+        itax5 = D(price8 * 0.05)
+        price8 = price8 + float(round_to_5_cents(itax5))
+    else:
+        itax5 = 0
+else:
+    tax8 = 0
+
+
+n9 = int(h[0])
+price9 = float(h[-5:])
+product9 = h[2:-9]
+
+if product9 == 'imported bottle of perfume' or 'bottle of perfume':
+    tax9 = D(price9 * 0.1)
+    if re.search(r'\bimported\b', product9):
+        itax6 = D(price9 * 0.05)
+        price9 = price9 + float(round_to_5_cents(itax6))
+    else:
+        itax6 = 0
+else:
+    tax9 = 0
+
+total3 = n6 * price6 + n7 * price7 + n8 * price8 + n9 * price9
+taxes3 = tax6 + tax7 + tax8 + tax9
+
+print('Output 3:')
+
+print(n6, product6 + ':', price6)
+print(n7, product7 + ':', price7)
+print(n8, product8 + ':', price8)
+print(n9, product9 + ':', price9)
+
+print('---------')
+print("Sales Taxes: ", round(round_to_5_cents(taxes3), 2))
+print("Total: ", round(total3, 2))
